@@ -12,48 +12,48 @@ import base64
 
 st.set_page_config(page_title="Gemini Healthcare Assistant", layout="centered")
 
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #f0f2f6;
-    }
-
-    [data-testid="stSidebar"] {
-        background-color: #fbeec1;
-    }
-
-    /* White background and styling for input boxes */
-    div[data-testid="textInput"] input {
-        background-color: #ffffff !important;
-        color: black !important;
-        border-radius: 5px;
-    }
-
-    /* White background for select box */
-    div[data-testid="stSelectbox"] > div {
-        background-color: #ffffff !important;
-        color: black !important;
-        border-radius: 5px;
-    }
-
-    /* Optional: white textarea too */
-    textarea {
-        background-color: #ffffff !important;
-        color: black !important;
-        border-radius: 5px;
-
-    }
-    [data-testid="stForm"] > div:first-child > div:first-child > div:first-child {{
-    background-color: #ffffff !important;
-    border-radius: 12px !important;
-    padding: 1.5rem !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# st.markdown(
+#     """
+#     <style>
+#     .stApp {
+#         background-color: #ffffff;
+#     }
+#
+#     [data-testid="stSidebar"] {
+#         background-color: #fbeec1;
+#     }
+#
+#     /* White background and styling for input boxes */
+#     div[data-testid="textInput"] input {
+#         background-color: #ffffff !important;
+#         color: black !important;
+#         border-radius: 5px;
+#     }
+#
+#     /* White background for select box */
+#     div[data-testid="stSelectbox"] > div {
+#         background-color: #ffffff !important;
+#         color: black !important;
+#         border-radius: 5px;
+#     }
+#
+#     /* Optional: white textarea too */
+#     textarea {
+#         background-color: #ffffff !important;
+#         color: black !important;
+#         border-radius: 5px;
+#
+#     }
+#     [data-testid="stForm"] > div:first-child > div:first-child > div:first-child {{
+#     background-color: #ffffff !important;
+#     border-radius: 12px !important;
+#     padding: 1.5rem !important;
+#     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+#     }}
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 
 def load_font_base64(path):
@@ -327,4 +327,3 @@ User's Message:
                     st.warning("⚠️ Invalid record format.")
         else:
             st.info("No past records found.")
-
