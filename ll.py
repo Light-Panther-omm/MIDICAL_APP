@@ -6,54 +6,39 @@ import logging
 from datetime import datetime
 import re
 from transformers import pipeline
-
-# --- CUSTOM FONT FOR TITLE ---
 import base64
 
 st.set_page_config(page_title="Gemini Healthcare Assistant", layout="centered")
 
-# st.markdown(
-#     """
-#     <style>
-#     .stApp {
-#         background-color: #ffffff;
-#     }
-#
-#     [data-testid="stSidebar"] {
-#         background-color: #fbeec1;
-#     }
-#
-#     /* White background and styling for input boxes */
-#     div[data-testid="textInput"] input {
-#         background-color: #ffffff !important;
-#         color: black !important;
-#         border-radius: 5px;
-#     }
-#
-#     /* White background for select box */
-#     div[data-testid="stSelectbox"] > div {
-#         background-color: #ffffff !important;
-#         color: black !important;
-#         border-radius: 5px;
-#     }
-#
-#     /* Optional: white textarea too */
-#     textarea {
-#         background-color: #ffffff !important;
-#         color: black !important;
-#         border-radius: 5px;
-#
-#     }
-#     [data-testid="stForm"] > div:first-child > div:first-child > div:first-child {{
-#     background-color: #ffffff !important;
-#     border-radius: 12px !important;
-#     padding: 1.5rem !important;
-#     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-#     }}
-#     </style>
-#     """,
-#     unsafe_allow_html=True
-# )
+st.markdown("""
+    <style>
+    .chat-bubble {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        border-radius: 10px;
+        max-width: 80%;
+    }
+    .user-bubble {
+        background-color: #2f2f2f;
+        color: white;
+        margin-left: auto;
+    }
+    .bot-bubble {
+        background-color: #e0f7fa;
+        color: black;
+        margin-right: auto;
+    }
+    mark {
+        background-color: #ffeb3b;
+        font-weight: bold;
+    }
+    [data-testid="stForm"] {
+        background-color: white;
+    }
+    </style>
+
+""", unsafe_allow_html=True)
+
 
 
 def load_font_base64(path):
@@ -62,21 +47,6 @@ def load_font_base64(path):
 
 
 font_base64 = load_font_base64("Greenos.ttf")  # <-- using .otf now
-
-st.markdown(
-    f"""
-    <style>
-    @font-face {{
-        font-family: 'CustomTitleFont';
-        src: url(data:font/otf;base64,{font_base64}) format('truetype');
-    }}
-    h1 {{
-        font-family: 'CustomTitleFont', sans-serif !important;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 # Load NER model
 PRETRAINED = "raynardj/ner-disease-ncbi-bionlp-bc5cdr-pubmed"
@@ -162,34 +132,6 @@ def ask_gemini(prompt):
         return "⚠️ An unexpected error occurred. Please try again."
 
 
-# Page config and styles
-
-
-st.markdown("""
-    <style>
-    .chat-bubble {
-        padding: 1rem;
-        margin-bottom: 0.5rem;
-        border-radius: 10px;
-        max-width: 80%;
-    }
-    .user-bubble {
-        background-color: #2f2f2f;
-        color: white;
-        margin-left: auto;
-    }
-    .bot-bubble {
-        background-color: #e0f7fa;
-        color: black;
-        margin-right: auto;
-    }
-    mark {
-        background-color: #ffeb3b;
-        font-weight: bold;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
 # Initialize session state
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
@@ -200,14 +142,6 @@ if "selected_tag" not in st.session_state:
 
 # LOGIN PAGE
 if not st.session_state.logged_in:
-    st.markdown("""
-        <style>
-            [data-testid="stSidebar"] {
-                display: none;
-            }
-        </style>
-    """, unsafe_allow_html=True)
-
     st.title("🔐 Login")
     st.markdown("Please enter your credentials to continue.")
 
