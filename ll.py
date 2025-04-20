@@ -142,7 +142,7 @@ if "selected_tag" not in st.session_state:
 
 # LOGIN PAGE
 if not st.session_state.logged_in:
-    st.title("🔐 Login")
+    st.title("🔐 :black[Login]")
     st.markdown("Please enter your credentials to continue.")
 
     with st.form("login_form"):
