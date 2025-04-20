@@ -33,7 +33,7 @@ st.markdown("""
         font-weight: bold;
     }
     [data-testid="stForm"] {
-        background-color: white;
+        background-color: primary;
     }
     </style>
 
