@@ -11,3 +11,4 @@ google-auth==2.39.0
 transformers~=4.51.3
 torch==2.6.0
 colorama~=0.4.6
+st_fixed_container ==0.3.5
