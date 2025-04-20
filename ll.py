@@ -408,12 +408,12 @@ if "selected_tag" not in st.session_state:
 
 # LOGIN PAGE
 if not st.session_state.logged_in:
-    st.title("🔐 :black[Login]")
+    st.title("🔐 :primary[Login]")
     st.markdown("Please enter your credentials to continue.")
 
     with st.form("login_form"):
-        username = st.text_input(":white[Username]")
-        password = st.text_input("Password", type="password")
+        username = st.text_input(":primary[Username]")
+        password = st.text_input(":primary[Password]", type="password")
         submitted = st.form_submit_button("Login")
 
         if submitted or (username and password and st.session_state.get("autologin", False)):
