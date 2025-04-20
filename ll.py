@@ -298,9 +298,7 @@ st.markdown("""
         background-color: #ffeb3b;
         font-weight: bold;
     }
-    [data-testid="stForm"] {
-        background-color: white;
-    }
+    
     </style>
 
 """, unsafe_allow_html=True)
