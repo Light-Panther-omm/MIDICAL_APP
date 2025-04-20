@@ -146,7 +146,8 @@ if not st.session_state.logged_in:
     st.markdown("Please enter your credentials to continue.")
 
     with st.form("login_form"):
-        username = st.text_input(":blue[Username]")
+        st.title("Username")
+        username = st.text_input()
         password = st.text_input("Password", type="password")
         submitted = st.form_submit_button("Login")
 
