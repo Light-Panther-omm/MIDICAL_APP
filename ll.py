@@ -438,14 +438,14 @@ else:
         name = st.text_input("Name (optional for health-related questions)")
         age = st.text_input("Age (optional for health-related questions)")
         gender = st.selectbox("Gender (optional for health-related questions)", ["", "Male", "Female", "Other"])
-        if st.button("submit"):
+        if st.button("Submit"):
             st.yes = True
 
     tab1, tab2 = st.tabs(["💬 Chat", "📜 Records"])
 
     with tab1:
         with st_fixed_container.st_fixed_container(mode="sticky", position="top",margin="0rem"):
-            st.title("🩺Healthcare Assistant")
+            st.title("🩺 SwasthAI")
             st.markdown("#### 🏷️ Choose a topic :")
             predefined_tags = ["General", "Mental Health", "Diet", "Fitness", "Stress"]
             st.session_state.selected_tag = st.radio("", predefined_tags, horizontal=True, index=0)
