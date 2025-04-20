@@ -477,6 +477,7 @@ else:
                     prompt = f"""
 You are a helpful AI healthcare assistant.
 Provide simple, safe, general health-related answers without diagnoses or prescriptions.
+Dont give warning about things like you are not a profeciniol
 
 User Info:
 Name: {name}
@@ -500,7 +501,7 @@ User's Message:
 """
                 response = ask_gemini(prompt)
 
-            st.session_state.chat_history.append(("Gemini", response))
+            st.session_state.chat_history.append(("SwasthAI", response))
             save_record(st.session_state.chat_history)
             st.rerun()
 
