@@ -431,13 +431,15 @@ else:
     with st.sidebar:
         st.header("LOGGED IN")
         st.write(f"**{st.session_state.username}**")
-        name = st.text_input("Name (optional for health-related questions)")
-        age = st.text_input("Age (optional for health-related questions)")
-        gender = st.selectbox("Gender (optional for health-related questions)", ["", "Male", "Female", "Other"])
         if st.button("Logout"):
             st.session_state.logged_in = False
             st.session_state.chat_history = []
             st.rerun()
+        name = st.text_input("Name (optional for health-related questions)")
+        age = st.text_input("Age (optional for health-related questions)")
+        gender = st.selectbox("Gender (optional for health-related questions)", ["", "Male", "Female", "Other"])
+        if st.button("submit"):
+            st.yes = True
 
     tab1, tab2 = st.tabs(["💬 Chat", "📜 Records"])
 
