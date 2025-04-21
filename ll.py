@@ -445,7 +445,7 @@ else:
 
     with tab1:
         with st_fixed_container.st_fixed_container(mode="sticky", position="top",margin="0rem"):
-            st.title("🩺 SwasthAI")
+            st.title("🩺 ArogyaMitra")
             st.markdown("#### 🏷️ Choose a topic :")
             predefined_tags = ["General", "Mental Health", "Diet", "Fitness", "Stress"]
             st.session_state.selected_tag = st.radio("", predefined_tags, horizontal=True, index=0)
