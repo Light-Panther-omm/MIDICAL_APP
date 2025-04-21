@@ -274,7 +274,7 @@ from transformers import pipeline
 import base64
 import st_fixed_container
 
-st.set_page_config(page_title="Gemini Healthcare Assistant", layout="centered")
+st.set_page_config(page_title="SwasthAI", layout="centered")
 
 st.markdown("""
     <style>
