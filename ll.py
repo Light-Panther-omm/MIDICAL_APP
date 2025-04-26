@@ -333,6 +333,7 @@ users = {
     "a": "2",
     "doctor": "health123",
     "": "",
+    "Prince":"123"
 }
 
 # File to store chat records
