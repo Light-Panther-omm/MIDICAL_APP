@@ -343,8 +343,11 @@ CHAT_RECORD_FILE = "chat_records.json"
 # Load/save records
 def load_records():
     if os.path.exists(CHAT_RECORD_FILE):
+        
         with open(CHAT_RECORD_FILE, "r") as f:
-            return json.load(f)
+            f = json.load(f)
+            if f.len() !=:
+                return f
     return []
 
 
