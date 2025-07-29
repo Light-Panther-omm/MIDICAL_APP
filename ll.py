@@ -346,7 +346,7 @@ def load_records():
         
         with open(CHAT_RECORD_FILE, "r") as f:
             f = json.load(f)
-                return f
+            return f
     return []
 
 
